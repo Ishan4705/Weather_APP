@@ -10,7 +10,7 @@ export default function WeatherApp(){
         temp: 30.58,
         tempMax: 30.58,
         tempMin: 30.58,
-        visibility: 10000,
+        visibility: 5000,
         weather: "overcast clouds",
         wind: 2.89,
     });
