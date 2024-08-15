@@ -30,7 +30,7 @@ export default function infobox({info}){ // info prop passed here
                 <CardMedia
                 component="img"
                 height="140"
-                image={info.humidity>90 ? rainURL:info.temp>20 ? hotURL: coldURL}
+                image={info.humidity>80 ? rainURL:info.temp>20 ? hotURL: coldURL}
                 alt="Dusty"
                 />
                 <CardContent>
