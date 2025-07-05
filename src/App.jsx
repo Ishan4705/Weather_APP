@@ -1,14 +1,11 @@
 import WeatherApp from './WeatherApp';
-
+import { ThemeProvider } from './ThemeContext';
 
 function App() {
-
  return(
-  <>
-  <WeatherApp/>
- {/* <SearchBox/>
- <InfoBox/> */}
-</>
+  <ThemeProvider>
+    <WeatherApp/>
+  </ThemeProvider>
  );
 }
 

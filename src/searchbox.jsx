@@ -52,12 +52,41 @@ export default function SearchBox({updateInfo}) {
     };
     return(
         <div className='searchbox'>
-            <h3>Search for any city</h3>
+            <h3>🔍 Search for any city</h3>
             <form onSubmit={handlesubmit}>
-            <TextField id="outlined-basic" label="City Name" variant="outlined" required value={city} onChange={handlechange}/>
-            <br /><br />
-            <Button variant="contained" type='submit'>Search</Button>
-            {err && <p style={{color:"red"}}>No such place exits!!</p>}
+            <TextField 
+                id="outlined-basic" 
+                label="City Name" 
+                variant="outlined" 
+                required 
+                value={city} 
+                onChange={handlechange}
+                fullWidth
+                sx={{
+                    '& .MuiOutlinedInput-root': {
+                        borderRadius: '25px',
+                        '& fieldset': {
+                            borderColor: 'var(--border-color, rgba(0, 0, 0, 0.23))',
+                        },
+                        '&:hover fieldset': {
+                            borderColor: 'var(--accent-color, #1976d2)',
+                        },
+                    },
+                }}
+            />
+            <Button 
+                variant="contained" 
+                type='submit'
+                sx={{
+                    background: 'linear-gradient(45deg, #1976d2, #90caf9)',
+                    '&:hover': {
+                        background: 'linear-gradient(45deg, #1565c0, #64b5f6)',
+                    },
+                }}
+            >
+                Search Weather
+            </Button>
+            {err && <p className="error-message">❌ No such place exists! Please try again.</p>}
             </form>
         </div>
     );
