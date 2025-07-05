@@ -1,0 +1,87 @@
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--toggle-bg, #f0f0f0);
+  border: 2px solid var(--toggle-border, #e0e0e0);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--toggle-icon-color, #333);
+  transition: color 0.3s ease;
+}
+
+/* Light theme styles */
+[data-theme="light"] .theme-toggle {
+  --toggle-bg: #ffffff;
+  --toggle-border: #e0e0e0;
+  --toggle-icon-color: #333333;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+  --toggle-bg: #f8f9fa;
+  --toggle-border: #007bff;
+}
+
+/* Dark theme styles */
+[data-theme="dark"] .theme-toggle {
+  --toggle-bg: #2d3748;
+  --toggle-border: #4a5568;
+  --toggle-icon-color: #f7fafc;
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  --toggle-bg: #4a5568;
+  --toggle-border: #63b3ed;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .theme-toggle {
+    width: 45px;
+    height: 45px;
+    top: 15px;
+    right: 15px;
+  }
+  
+  .toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .toggle-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+}

@@ -1,5 +1,6 @@
 import SearchBox from './searchbox';
 import InfoBox from './infobox';
+import ThemeToggle from './ThemeToggle';
 import { useState } from 'react';
 export default function WeatherApp(){
     const [weatherInfo,setWeatherInfo]=useState({
@@ -18,8 +19,28 @@ export default function WeatherApp(){
         setWeatherInfo(newInfo);
     }
     return(
-        <div style={{textAlign:"center"}}>
-            <h1>Weather</h1>
+        <div style={{
+            textAlign:"center",
+            minHeight: "100vh",
+            background: "var(--bg-color)",
+            color: "var(--text-color)",
+            padding: "20px",
+            transition: "all 0.3s ease"
+        }}>
+            <ThemeToggle />
+            <h1 style={{
+                fontSize: "3.5rem",
+                marginBottom: "30px",
+                background: "linear-gradient(45deg, #1976d2, #90caf9)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+                fontWeight: "700",
+                textShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                letterSpacing: "2px"
+            }}>
+                Weather
+            </h1>
             <SearchBox updateInfo={updateInfo}/>
             <InfoBox info={weatherInfo}/>
         </div>

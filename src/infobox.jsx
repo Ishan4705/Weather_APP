@@ -26,28 +26,44 @@ export default function infobox({info}){ // info prop passed here
         <div className="InfoBox">
             <h1>{info.city}</h1>
             <div className='cardContainer'>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card className="weather-card" sx={{ maxWidth: 400 }}>
                 <CardMedia
                 component="img"
-                height="140"
-                image={info.humidity>75 ? rainURL:info.temp>20 ? hotURL: coldURL}
-                alt="Dusty"
+                height="200"
+                image={info.humidity>90 ? rainURL:info.temp>20 ? hotURL: coldURL}
+                alt="Weather Image"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {info.weather.toUpperCase()}
+                    <Typography className="weather-title" gutterBottom variant="h5" component="div">
+                        {info.weather}
                         <hr />
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" component={"span"}>
-                        <p>Country: <b>{info.country}</b></p>
-                        <p>Current Temperature: <b>{info.temp}&deg;C</b></p>
-                        <p>Max Temperature: <b>{info.tempMax}&deg;C</b></p>
-                        <p>Min Temperature: <b>{info.tempMin}&deg;C</b></p>
-                        <p>Visibility: <b>{info.visibility} m</b></p>
-                        <p>Wind Speed: <b>{info.wind} Km/h</b></p>
-                        <p>Humidity: <b>{info.humidity}</b></p>
-                        <p>Temperature feels like: <b>{info.feelsLike}&deg;C.</b></p>
-                    </Typography>
+                    <div className="weather-info">
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>🌍 Country:</span> <b>{info.country}</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>🌡️ Temperature:</span> <b>{info.temp}°C</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>🔥 Max Temp:</span> <b>{info.tempMax}°C</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>❄️ Min Temp:</span> <b>{info.tempMin}°C</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>👁️ Visibility:</span> <b>{info.visibility} m</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>💨 Wind Speed:</span> <b>{info.wind} km/h</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>💧 Humidity:</span> <b>{info.humidity}%</b>
+                        </Typography>
+                        <Typography variant="body2" color="text.secondary" component="p">
+                            <span>🌡️ Feels Like:</span> <b>{info.feelsLike}°C</b>
+                        </Typography>
+                    </div>
                 </CardContent>
             </Card>
             </div>
